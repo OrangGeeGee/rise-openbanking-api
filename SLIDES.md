@@ -47,3 +47,16 @@ Level 6: ...
 ### Outro
 
 Selling points, Fintech map
+
+### PSD2 and security solution around it
+
+general story on SCA + OAuth2 code path
+OWASP for OAuth2
+
+### PSD2 and security solution around it
+
+Mutual SSL and signing of messages
+
+### HSM
+
+Ideas about pkey protection
