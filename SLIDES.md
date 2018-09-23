@@ -16,6 +16,53 @@ controls: true
 
 API Scope; Ownership
 
+
+--
+### PSD2 - Payment Service Directive 2
+Players:
+PSU - end user
+TPP - third party provider
+Bank
+
+<<diagram - PSU -> TPP -> *multibank>>
+--
+### Message
+* Main message: Customer is owner of account, not the bank.
+* User can use any intermediate as a channel or product provider to use accounts
+* PSD2 services are provided on same cost basis as 
+* e.g. U may "add" your account from X bank to Swedbank internet bank and use as native one
+* e.g. ERP may create integration to any bank
+--
+### Endpoints
+* /consent/
+* /accouts/
+* /payments/
+
+* integration pattern - redirect, later decoupled/embedded
+--
+
+### General schema - 1
+* Preauth OAuth2 based schema
+1. if U have OAuth2 token - call backend
+2. if not get it using OAuth2 "Authorization code" grant 
+3. if U get error on expired/ non-existant token - refresh
+
+
+--
+### General schema - 2 
+* General flow for AIS + PIS flow
+1. TPP->Bank: request account list consent  POST /consent/ {accounts:allAccounts}
+2. Bank->PSU: SCA on this item redirect to flow
+3. TPP: /accounts/
+4. TPP: prepare consent POST /consent/ { balances{}, transactions {} }
+5. Bank->PSU: SCA on this item redirect to flow
+6. TPP: /accounts/ + /accounts/${id}/balances  + /accounts/${id}/transactions
+7. TPP: prepare payment + POST/payment/ XML or json
+8. Bank->PSU: SCA on this item redirect to flow
+9. TPP: check payment status
+10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
+
+
 --
 
 ### API Management
