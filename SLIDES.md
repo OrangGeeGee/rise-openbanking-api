@@ -7,16 +7,21 @@ controls: true
 
 --
 
-# Bankų Open API - žvilgsnis po kapotu
-# Bank Open API - peek behind the hood
+# Banks' Open API - behind the scenes
 ## Antanas Sinica, Mindaugas Žilinskas
 
 --
 
-### Intro
+### Today
 
-API Scope; Ownership
+* PSD2 - what is it?
+* Swedbank API
+* Consuming the APIs
+* Your turn ʕ·͡ᴥ·ʔ
 
+--
+
+# PSD2 - what is it?
 
 --
 ### PSD2 - Payment Service Directive 2
@@ -25,9 +30,11 @@ PSU - end user / customer
 TPP - third party provider
 Bank
 
+```
 <<diagram - PSU -> multibank>>
 
 <<diagram - PSU -> TPP -> *multibank>>
+```
 
 --
 ### PSD2 in human terms
@@ -38,14 +45,14 @@ Bank
 
 --
 ### PSD2 in technical terms
-Preauthentificate step (OAuth2 grant code flow)
+Pre-authenticate step (OAuth2 grant code flow)
 * /consent/
 * /accouts/
 * /accouts/${id}/balance
 * /accouts/${id}/transactions
-* /payments/sepa-credit-transfer/
+* /payments/sepa-credit-transfer
+* customer auth methods - redirect, later decoupled/embedded
 
-* integration pattern - redirect, later decoupled/embedded
 --
 
 ### General schema - 1
@@ -53,55 +60,17 @@ Preauthentificate step (OAuth2 grant code flow)
 1. if U have OAuth2 token - call backend
 2. if not get it using OAuth2 "Authorization code" grant 
 3. if U get error on expired/ non-existant token - refresh
-<<diagram>>
---
-### General schema - 2 
-* General flow for AIS + PIS flow
-1. TPP->Bank: request account list consent  POST /consent/ {accounts:allAccounts}
-2. Bank->PSU: SCA on this item redirect to flow
-3. TPP: /accounts/
-4. TPP: prepare consent POST /consent/ { balances{}, transactions {} }
-5. Bank->PSU: SCA on this item redirect to flow
-6. TPP: /accounts/ + /accounts/${id}/balances  + /accounts/${id}/transactions
-7. TPP: prepare payment + POST/payment/ XML or json
-8. Bank->PSU: SCA on this item redirect to flow
-9. TPP: check payment status
-10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
-<<diagram>>
+```<<diagram>>```
 
 --
 
-### API Management
+# Swedbank API
+## Mutual TLS (QWAC), OAuth2, Signing (QSEALC), Redirect flow
 
-* Item 1
-* Item B
-* Item gamma
-
-New Paragraph
-
---
-
-### API Aggregation
-
-Opening statement: 6000+ finansinių institucijų europoje affected
-
-Level 2: UK susitarė atskirai, France irgi, Poland irgi, Berlin-group inception
-
-Level 3: Tas daro XML, anas XML ir panašiau į SOAP, šitas JSON, dar kitas dar kažkaip JSON
-
-level 4: PSD2 evolving standard in English; Berlin-group spec evolving standard also in English; RESTful JSON APIs trying to keep up with all the English - no standards.
-
-Level 5: JSON APIs examples; v1, √2, v3;
-
-Level 6: ... 
-
---
-
-### Outro
-
-Selling points, Fintech map
 --
 ### Security architecture
+
+What if legal TPP (bad guy) from Bulgaria calls our API?
 
 mutual SSL , Login server, JWT, OAuth2
 <<diagram>>
@@ -116,6 +85,13 @@ OWASP for OAuth2
 Mutual SSL and signing of messages
 
 Ideas about pkey protection
+
+
+
+--
+### General schema - 2 
+10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
+<<diagram>>
 
 --
 
@@ -193,3 +169,36 @@ end;
     TPP->>API: POST /consent {detailed consent}
 
 
+
+
+--
+
+# Consuming the APIs
+
+--
+
+### API Aggregation
+
+Opening statement: 6000+ finansinių institucijų europoje affected
+
+Level 2: UK susitarė atskirai, France irgi, Poland irgi, Berlin-group inception
+
+Level 3: Tas daro XML, anas XML ir panašiau į SOAP, šitas JSON, dar kitas dar kažkaip JSON
+
+level 4: PSD2 evolving standard in English; Berlin-group spec evolving standard also in English; RESTful JSON APIs trying to keep up with all the English - no standards.
+
+Level 5: JSON APIs examples; v1, √2, v3;
+
+Level 6: ... 
+
+--
+
+# Your turn ʕ·͡ᴥ·ʔ
+
+--
+
+### Upcomming
+
+1. 2019 September 
+2. Fintech map
+3. Fun challenges on both sides of the fence
