@@ -8,6 +8,7 @@ controls: true
 --
 
 # Bankų Open API - žvilgsnis po kapotu
+# Bank Open API - peek behind the hood
 ## Antanas Sinica, Mindaugas Žilinskas
 
 --
@@ -20,23 +21,29 @@ API Scope; Ownership
 --
 ### PSD2 - Payment Service Directive 2
 Players:
-PSU - end user
+PSU - end user / customer
 TPP - third party provider
 Bank
 
+<<diagram - PSU -> multibank>>
+
 <<diagram - PSU -> TPP -> *multibank>>
+
 --
-### Message
-* Main message: Customer is owner of account, not the bank.
-* User can use any intermediate as a channel or product provider to use accounts
-* PSD2 services are provided on same cost basis as 
+### PSD2 in human terms
+* Main message: Customer is owner of account, not the bank, so Customer can use any intermediate as a channel or product provider to use accounts
+* PSD2 services are provided on same cost basis as main channel (bank is not allowed to charge extra from TPP) 
 * e.g. U may "add" your account from X bank to Swedbank internet bank and use as native one
 * e.g. ERP may create integration to any bank
+
 --
-### Endpoints
+### PSD2 in technical terms
+Preauthentificate step (OAuth2 grant code flow)
 * /consent/
 * /accouts/
-* /payments/
+* /accouts/${id}/balance
+* /accouts/${id}/transactions
+* /payments/sepa-credit-transfer/
 
 * integration pattern - redirect, later decoupled/embedded
 --
@@ -46,8 +53,7 @@ Bank
 1. if U have OAuth2 token - call backend
 2. if not get it using OAuth2 "Authorization code" grant 
 3. if U get error on expired/ non-existant token - refresh
-
-
+<<diagram>>
 --
 ### General schema - 2 
 * General flow for AIS + PIS flow
@@ -61,7 +67,7 @@ Bank
 8. Bank->PSU: SCA on this item redirect to flow
 9. TPP: check payment status
 10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
-
+<<diagram>>
 
 --
 
@@ -94,16 +100,96 @@ Level 6: ...
 ### Outro
 
 Selling points, Fintech map
+--
+### Security architecture
 
+mutual SSL , Login server, JWT, OAuth2
+<<diagram>>
+
+Detailed flow
+<<diagram>>
+--
 ### PSD2 and security solution around it
-
 general story on SCA + OAuth2 code path
 OWASP for OAuth2
 
-### PSD2 and security solution around it
-
 Mutual SSL and signing of messages
 
-### HSM
-
 Ideas about pkey protection
+
+--
+
+sequenceDiagram
+    participant PSU as Customer
+    participant TPP as Third Party Provider
+    participant API as Bank API
+    participant Login as Bank Login&Sign servers
+    PSU->>TPP: login
+
+    loop get OAuth2 token
+         TPP->>API: pre-authentificate OAuth2.0
+    end
+
+    TPP->>+API: POST /consent {allAccounts}
+    API->>-TPP: link for PSU to sign consent
+    TPP->>PSU: redirect
+    Activate PSU
+    PSU->>+Login: view & sign list of visible accounts
+    Login->>-PSU: redirect to TPP
+    PSU->>TPP: consent OK
+   Deactivate PSU
+
+    TPP->>+API: /accounts
+    API->>-TPP: { {"iban":"LT71"},{"iban":"LT72"},{"iban":"LT73"}}
+    TPP->>PSU: show consent
+    PSU->>TPP: provide consent details
+
+    TPP->>API: POST /consent { "balance": ["LT71","LT72","LT73"], "transactions":["LT71"]}
+    API->TPP: link for PSU to sign detailed consent
+    PSU->>Login: sign consent
+    PSU->>API: /accounts/
+loop for each account
+    PSU->>API: /accounts/${iban}/balance
+    PSU->>API: /accounts/${iban}/transactions
+end;
+    TPP->>API: POST /consent {detailed consent}
+    TPP->>API: POST /consent {detailed consent}
+---
+
+sequenceDiagram
+    participant PSU as Customer
+    participant TPP as Third Party Provider
+    participant API as Bank API
+    participant Login as Bank Login&Sign servers
+    TPP->>API: pre-authentificate OAuth2.0
+
+    TPP->>API: get list of accounts - POST /consent {allAccounts}
+	TPP->>API: set detailed consent - POST /consent { "balance": ["LT71","LT72","LT73"], "transactions":["LT71"]}
+	TPP->>API: show/ use balance/transactions - GET /accounts/${iban}/balance | /transactions
+	TPP->>API: make payments - /POST/payment/
+
+    API->>-TPP: link for PSU to sign consent
+    TPP->>PSU: redirect
+    Activate PSU
+    PSU->>+Login: view & sign list of visible accounts
+    Login->>-PSU: redirect to TPP
+    PSU->>TPP: consent OK
+   Deactivate PSU
+
+    TPP->>+API: /accounts
+    API->>-TPP: { {"iban":"LT71"},{"iban":"LT72"},{"iban":"LT73"}}
+    TPP->>PSU: show consent
+    PSU->>TPP: provide consent details
+
+    TPP->>API: POST /consent { "balance": ["LT71","LT72","LT73"], "transactions":["LT71"]}
+    API->TPP: link for PSU to sign detailed consent
+    PSU->>Login: sign consent
+    PSU->>API: /accounts/
+loop for each account
+    PSU->>API: /accounts/${iban}/balance
+    PSU->>API: /accounts/${iban}/transactions
+end;
+    TPP->>API: POST /consent {detailed consent}
+    TPP->>API: POST /consent {detailed consent}
+
+
