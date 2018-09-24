@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant TPP as Third Party Provider
+    participant API as Bank API
+    TPP->>API: pre-auth OAuth2.0
+    TPP->>API: get list of accounts - POST /consent allAccounts
+	TPP->>API: set detailed consent - POST /consent 
+	TPP->>API: show balance/transactions - GET /accounts/${iban}/transactions
+	TPP->>API: make payments - /POST/payment/

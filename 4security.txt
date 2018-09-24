@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant PSU as Customer
+    participant TPP as Third Party Provider
+    participant API as Bank API
+    PSU->>TPP: request 
+    TPP->>TPP: prepare message & sign QSealC
+    TPP->>API: https using TLS with QWAC
+    TPP->>API: call API
+    API->>API: check TLS
+    API->>API: check OAuth2
+    API->>API: check QSealC
+    API->>API: check security
+    API->>Backend: call
+    Backend->>API: respose
+    API ->> TPP: respose
+    TPP ->> PSU: respose
