@@ -68,20 +68,46 @@ style: style.css
 --
 
 ### Security architecture
-#### Can anyone call bank API to get any body's any account data or execute any payment?
+#### Can anyone call bank API to get anybody's account data or make any payment?
+
+--
+
+### Security architecture
+#### Can anyone call bank API to get anybody's account data or make any payment?
 
 * Not anyone - use mutual TLS based on QWAC as proof of certified TPP
+
+--
+
+### Security architecture
+#### Can licensed TPP call bank API to get anybody's account data or make any payment?
+
 * Not anybody - use SCA based OAuth2 as auth engine for proving Customer identity
+
+--
+
+### Security architecture
+#### Can licensed TPP call bank API to get customer's account data or make any payment?
+
 * Not any account - customer must give consent (use SCA to sign it).
+
+--
+
+### Security architecture
+#### Can licensed TPP call bank API to get customer's allowed account data or make any payment?
+
 * Not any payment - customer must sign payment (use SCA to sign it).
 
 --
 
 ### Security architecture
-#### Can certified TPP call bank API to get your allowed accounts data & initiate payment?
+#### Can certified TPP call bank API to get your allowed accounts data & make the payment?
 
 * Yes :)
 
+--
+
+### Security architecture
 #### Can TPP misbehave? Or be hacked?
 
 * QSealC for payments signing
@@ -98,15 +124,10 @@ style: style.css
 </span>
 
 --
-### Oauth2 schema
-10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
-<<diagram>>
-
---
 ### Payments schema
-10. TPP: check status:  /accounts/${id}/balances  + /accounts/${id}/transactions
-<<diagram>>
-
+<span>
+<img alt="PSU uses TPP to make payment in redirect flow" height="600" src="5payments.svg" />
+</span>
 --
 
 # Consuming the APIs
@@ -129,7 +150,7 @@ style: style.css
 
 ### Initiate payment in Swedbank Baltics
 
-Complexity level: 1
+<pre>Complexity level: 2 ^ 0 = 1</pre>
 
 `POST https://psd2.api.swedbank.com/sandbox/v1/payments/pain.001-sepa-credit-transfers` <sup>
 
@@ -171,7 +192,7 @@ Complexity level: 1
 
 ### Initiate payment in Swedbank Sweden
 
-Complexity level: 1 * 2 = 2
+<pre>Complexity level: 2 ^ 1 = 1</pre>
 
 `POST https://psd2.api.swedbank.com/sandbox/v1/payments/se-domestic-ct`
 
@@ -250,6 +271,16 @@ Complexity level: 4 * 2 = 8
   }
 }
 ```
+--
+
+### Different API endpoints
+
+Complexity level: 128 * 2 = 256
+
+All of these different endpoints have their differences:
+
+* /accounts, /accounts/${id}, /accounts/${id}/balance, /accounts/${id}/transactions
+* /payments/sepa-credit-transfer
 
 --
 
@@ -277,14 +308,14 @@ What HTTP headers you can find in the wild:
 
 --
 
-### HTTP Status codes
+### Status codes & errors
 
 Complexity level: 32 * 2 = 64
 
 Invalid from account specified when initiating a payment can give you
 
-* 400 Bad Request
-* 404 Not Found
+* 400 Bad Request (err | err2 | err3)
+* 404 Not Found (err | err2)
 
 --
 
@@ -297,22 +328,11 @@ Complexity level: 64 * 2 = 128
 
 --
 
-### Different API endpoints
-
-Complexity level: 128 * 2 = 256
-
-All of these different endpoints have their differences:
-
-* /accounts, /accounts/${id}, /accounts/${id}/balance, /accounts/${id}/transactions
-* /payments/sepa-credit-transfer
-
---
-
 ### Well how about other banks?
 
 * 2 covered
-* ~10 major in Baltics + Sweden
-* ~30 major+minor in Baltics + Sweden
+* ~10 major in Baltics
+* ~50 major in Baltics + Nordics
 
 Complexity level: 256 * 8 = 2048
 
