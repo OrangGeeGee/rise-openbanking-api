@@ -171,7 +171,7 @@ Complexity level: 1
 
 ### Initiate payment in Swedbank Sweden
 
-Complexity level: 1 + 1 = 2
+Complexity level: 1 * 2 = 2
 
 `POST https://psd2.api.swedbank.com/sandbox/v1/payments/se-domestic-ct`
 
@@ -299,7 +299,7 @@ Complexity level: 64 * 2 = 128
 
 ### Different API endpoints
 
-Complexity level: 64 * 2
+Complexity level: 128 * 2 = 256
 
 All of these different endpoints have their differences:
 
@@ -314,7 +314,7 @@ All of these different endpoints have their differences:
 * ~10 major in Baltics + Sweden
 * ~30 major+minor in Baltics + Sweden
 
-Complexity level: 64 * 16 = 1024
+Complexity level: 256 * 8 = 2048
 
 --
 
