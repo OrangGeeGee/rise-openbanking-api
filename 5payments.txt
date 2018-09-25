@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant PSU as Customer
+    participant TPP as Third Party Provider
+    participant API as Bank API
+    participant SIGN as Bank Sign server
+    PSU ->> TPP: from accx pay 100EUR to accy
+    TPP->>API: POST /payments/sepa-credit-transfer 
+    API-->>TPP: redirect https://bank/sign/4a5d8g6h5j
+    TPP-->>PSU: redirect https://bank/sign/4a5d8g6h5j
+    PSU->>SIGN: view payment
+    Note over TPP,API: GET /payments/xx4477/status
+    SIGN->>SIGN: sign payment ( smartID, pin, mobileID,...)
+    SIGN-->>PSU: redirect https://tpp/payment/OK
+    PSU->>TPP: payment done
