@@ -26,27 +26,27 @@ controls: true
 --
 ### before PSD2 - Payment Service Directive 2
 <span>
-<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://D:/mindaugas/slides/rise-openbanking-api/1before.svg" />
+<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://C:/Users/minzli/slides_rise/1before.svg" />
 </span>
 
 --
 ### after PSD2 - Payment Service Directive 2
 
 <span>
-<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://D:/mindaugas/slides/rise-openbanking-api/2after.svg" />
+<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://C:/Users/minzli/slides_rise/2after.svg" />
 </span>
 
 --
 ### PSD2 in human terms
 #### Main message - Customer is owner of account, so Customer can use any intermediate as a channel or product provider to use his own accounts
- * PSD2 services are provided on same cost basis as main channel (bank is not charging extra from TPP) 
- * TPP has no agreement with bank
+#### PSD2 services are provided on same cost basis as main channel (bank is not charging extra from TPP) 
+#### TPP has no agreement with bank
  
 --
 ### PSD2 in technical terms
-#### customer auth methods - redirect, later decoupled / embedded
-#### pre-authenticate step (OAuth2 with grant code flow)
-#### API
+##### customer auth methods - <b>redirect</b>, later decoupled / embedded
+##### pre-authenticate step (OAuth2 with grant code flow)
+##### API based on Berlin Group Specification
 * /consents/
 * /accouts/${id}/balance, /accouts/${id}/transactions
 * /payments/sepa-credit-transfer
@@ -56,7 +56,7 @@ controls: true
 ### General schema 
 
 <span>
-<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://D:/mindaugas/slides/rise-openbanking-api/3flow.svg" />
+<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://C:/Users/minzli/slides_rise/3flow.svg" />
 </span>
 
 --
@@ -67,13 +67,13 @@ controls: true
 --
 ### Security architecture
 #### Can anyone call bank API to get any body's any account data or execute any payment?
-* Not anyone - use TLS based on QWAC as proof of certified TPP
+* Not anyone - use mutual TLS based on QWAC as proof of certified TPP 
 * Not anybody - use SCA based OAuth2 as auth engine for proving Customer identity
-* Not any account - you must give consent (use SCA to sign it).
-* Not any payment- you must sign payment (use SCA to sign it).
+* Not any account - customer must give consent (use SCA to sign it).
+* Not any payment- customer must sign payment (use SCA to sign it).
 -- 
 ### Security architecture
-#### Can certified TPP call bank API to get your allowed accounts data?
+#### Can certified TPP call bank API to get your allowed accounts data & initiate payment?
 * Yes :)
 
 #### Can TPP misbehave? Or be hacked?
@@ -83,9 +83,9 @@ controls: true
 * anti fraud systems 
 * ...
 --
-
+### Security architecture
 <span>
-<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://D:/mindaugas/slides/rise-openbanking-api/4security.svg" />
+<img alt="PSU (end user/customer) uses TPPs (third party provider) to work with Banks" height="380" width="380" src="file://C:/Users/minzli/slides_rise/4security.svg" />
 </span>
 --
 ### Oauth2 schema
