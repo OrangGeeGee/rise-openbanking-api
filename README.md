@@ -5,7 +5,7 @@ Presentation for an event in Rise Vilnius on September 25th
 ## Install
 
 ```
-npm install -g cleaver
+npm install -g git+https://github.com/OrangGeeGee/cleaver.git
 ```
 
 ## Run
