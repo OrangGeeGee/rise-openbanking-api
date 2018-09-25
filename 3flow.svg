@@ -1,40 +1,40 @@
-<svg id="mermaid-1537823327869" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:450px;" viewBox="-50 -10 450 336"><style>
+<svg id="mermaid-1537860518154" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:450px;" viewBox="-50 -10 450 371"><style>
 
 
-#mermaid-1537823327869 .label {
+#mermaid-1537860518154 .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333; }
 
-#mermaid-1537823327869 .node rect,
-#mermaid-1537823327869 .node circle,
-#mermaid-1537823327869 .node ellipse,
-#mermaid-1537823327869 .node polygon {
+#mermaid-1537860518154 .node rect,
+#mermaid-1537860518154 .node circle,
+#mermaid-1537860518154 .node ellipse,
+#mermaid-1537860518154 .node polygon {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1px; }
 
-#mermaid-1537823327869 .node.clickable {
+#mermaid-1537860518154 .node.clickable {
   cursor: pointer; }
 
-#mermaid-1537823327869 .arrowheadPath {
+#mermaid-1537860518154 .arrowheadPath {
   fill: #333333; }
 
-#mermaid-1537823327869 .edgePath .path {
+#mermaid-1537860518154 .edgePath .path {
   stroke: #333333;
   stroke-width: 1.5px; }
 
-#mermaid-1537823327869 .edgeLabel {
+#mermaid-1537860518154 .edgeLabel {
   background-color: #e8e8e8; }
 
-#mermaid-1537823327869 .cluster rect {
+#mermaid-1537860518154 .cluster rect {
   fill: #ffffde !important;
   stroke: #aaaa33 !important;
   stroke-width: 1px !important; }
 
-#mermaid-1537823327869 .cluster text {
+#mermaid-1537860518154 .cluster text {
   fill: #333; }
 
-#mermaid-1537823327869 div.mermaidTooltip {
+#mermaid-1537860518154 div.mermaidTooltip {
   position: absolute;
   text-align: center;
   max-width: 200px;
@@ -47,304 +47,304 @@
   pointer-events: none;
   z-index: 100; }
 
-#mermaid-1537823327869 .actor {
+#mermaid-1537860518154 .actor {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1537823327869 text.actor {
+#mermaid-1537860518154 text.actor {
   fill: black;
   stroke: none; }
 
-#mermaid-1537823327869 .actor-line {
+#mermaid-1537860518154 .actor-line {
   stroke: grey; }
 
-#mermaid-1537823327869 .messageLine0 {
+#mermaid-1537860518154 .messageLine0 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #333; }
 
-#mermaid-1537823327869 .messageLine1 {
+#mermaid-1537860518154 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1537823327869 #arrowhead {
+#mermaid-1537860518154 #arrowhead {
   fill: #333; }
 
-#mermaid-1537823327869 #crosshead path {
+#mermaid-1537860518154 #crosshead path {
   fill: #333 !important;
   stroke: #333 !important; }
 
-#mermaid-1537823327869 .messageText {
+#mermaid-1537860518154 .messageText {
   fill: #333;
   stroke: none; }
 
-#mermaid-1537823327869 .labelBox {
+#mermaid-1537860518154 .labelBox {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1537823327869 .labelText {
+#mermaid-1537860518154 .labelText {
   fill: black;
   stroke: none; }
 
-#mermaid-1537823327869 .loopText {
+#mermaid-1537860518154 .loopText {
   fill: black;
   stroke: none; }
 
-#mermaid-1537823327869 .loopLine {
+#mermaid-1537860518154 .loopLine {
   stroke-width: 2;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #CCCCFF; }
 
-#mermaid-1537823327869 .note {
+#mermaid-1537860518154 .note {
   stroke: #aaaa33;
   fill: #fff5ad; }
 
-#mermaid-1537823327869 .noteText {
+#mermaid-1537860518154 .noteText {
   fill: black;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px; }
 
 
-#mermaid-1537823327869 .section {
+#mermaid-1537860518154 .section {
   stroke: none;
   opacity: 0.2; }
 
-#mermaid-1537823327869 .section0 {
+#mermaid-1537860518154 .section0 {
   fill: rgba(102, 102, 255, 0.49); }
 
-#mermaid-1537823327869 .section2 {
+#mermaid-1537860518154 .section2 {
   fill: #fff400; }
 
-#mermaid-1537823327869 .section1,
-#mermaid-1537823327869 .section3 {
+#mermaid-1537860518154 .section1,
+#mermaid-1537860518154 .section3 {
   fill: white;
   opacity: 0.2; }
 
-#mermaid-1537823327869 .sectionTitle0 {
+#mermaid-1537860518154 .sectionTitle0 {
   fill: #333; }
 
-#mermaid-1537823327869 .sectionTitle1 {
+#mermaid-1537860518154 .sectionTitle1 {
   fill: #333; }
 
-#mermaid-1537823327869 .sectionTitle2 {
+#mermaid-1537860518154 .sectionTitle2 {
   fill: #333; }
 
-#mermaid-1537823327869 .sectionTitle3 {
+#mermaid-1537860518154 .sectionTitle3 {
   fill: #333; }
 
-#mermaid-1537823327869 .sectionTitle {
+#mermaid-1537860518154 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
   text-height: 14px; }
 
 
-#mermaid-1537823327869 .grid .tick {
+#mermaid-1537860518154 .grid .tick {
   stroke: lightgrey;
   opacity: 0.3;
   shape-rendering: crispEdges; }
 
-#mermaid-1537823327869 .grid path {
+#mermaid-1537860518154 .grid path {
   stroke-width: 0; }
 
 
-#mermaid-1537823327869 .today {
+#mermaid-1537860518154 .today {
   fill: none;
   stroke: red;
   stroke-width: 2px; }
 
 
 
-#mermaid-1537823327869 .task {
+#mermaid-1537860518154 .task {
   stroke-width: 2; }
 
-#mermaid-1537823327869 .taskText {
+#mermaid-1537860518154 .taskText {
   text-anchor: middle;
   font-size: 11px; }
 
-#mermaid-1537823327869 .taskTextOutsideRight {
+#mermaid-1537860518154 .taskTextOutsideRight {
   fill: black;
   text-anchor: start;
   font-size: 11px; }
 
-#mermaid-1537823327869 .taskTextOutsideLeft {
+#mermaid-1537860518154 .taskTextOutsideLeft {
   fill: black;
   text-anchor: end;
   font-size: 11px; }
 
 
-#mermaid-1537823327869 .taskText0,
-#mermaid-1537823327869 .taskText1,
-#mermaid-1537823327869 .taskText2,
-#mermaid-1537823327869 .taskText3 {
+#mermaid-1537860518154 .taskText0,
+#mermaid-1537860518154 .taskText1,
+#mermaid-1537860518154 .taskText2,
+#mermaid-1537860518154 .taskText3 {
   fill: white; }
 
-#mermaid-1537823327869 .task0,
-#mermaid-1537823327869 .task1,
-#mermaid-1537823327869 .task2,
-#mermaid-1537823327869 .task3 {
+#mermaid-1537860518154 .task0,
+#mermaid-1537860518154 .task1,
+#mermaid-1537860518154 .task2,
+#mermaid-1537860518154 .task3 {
   fill: #8a90dd;
   stroke: #534fbc; }
 
-#mermaid-1537823327869 .taskTextOutside0,
-#mermaid-1537823327869 .taskTextOutside2 {
+#mermaid-1537860518154 .taskTextOutside0,
+#mermaid-1537860518154 .taskTextOutside2 {
   fill: black; }
 
-#mermaid-1537823327869 .taskTextOutside1,
-#mermaid-1537823327869 .taskTextOutside3 {
+#mermaid-1537860518154 .taskTextOutside1,
+#mermaid-1537860518154 .taskTextOutside3 {
   fill: black; }
 
 
-#mermaid-1537823327869 .active0,
-#mermaid-1537823327869 .active1,
-#mermaid-1537823327869 .active2,
-#mermaid-1537823327869 .active3 {
+#mermaid-1537860518154 .active0,
+#mermaid-1537860518154 .active1,
+#mermaid-1537860518154 .active2,
+#mermaid-1537860518154 .active3 {
   fill: #bfc7ff;
   stroke: #534fbc; }
 
-#mermaid-1537823327869 .activeText0,
-#mermaid-1537823327869 .activeText1,
-#mermaid-1537823327869 .activeText2,
-#mermaid-1537823327869 .activeText3 {
+#mermaid-1537860518154 .activeText0,
+#mermaid-1537860518154 .activeText1,
+#mermaid-1537860518154 .activeText2,
+#mermaid-1537860518154 .activeText3 {
   fill: black !important; }
 
 
-#mermaid-1537823327869 .done0,
-#mermaid-1537823327869 .done1,
-#mermaid-1537823327869 .done2,
-#mermaid-1537823327869 .done3 {
+#mermaid-1537860518154 .done0,
+#mermaid-1537860518154 .done1,
+#mermaid-1537860518154 .done2,
+#mermaid-1537860518154 .done3 {
   stroke: grey;
   fill: lightgrey;
   stroke-width: 2; }
 
-#mermaid-1537823327869 .doneText0,
-#mermaid-1537823327869 .doneText1,
-#mermaid-1537823327869 .doneText2,
-#mermaid-1537823327869 .doneText3 {
+#mermaid-1537860518154 .doneText0,
+#mermaid-1537860518154 .doneText1,
+#mermaid-1537860518154 .doneText2,
+#mermaid-1537860518154 .doneText3 {
   fill: black !important; }
 
 
-#mermaid-1537823327869 .crit0,
-#mermaid-1537823327869 .crit1,
-#mermaid-1537823327869 .crit2,
-#mermaid-1537823327869 .crit3 {
+#mermaid-1537860518154 .crit0,
+#mermaid-1537860518154 .crit1,
+#mermaid-1537860518154 .crit2,
+#mermaid-1537860518154 .crit3 {
   stroke: #ff8888;
   fill: red;
   stroke-width: 2; }
 
-#mermaid-1537823327869 .activeCrit0,
-#mermaid-1537823327869 .activeCrit1,
-#mermaid-1537823327869 .activeCrit2,
-#mermaid-1537823327869 .activeCrit3 {
+#mermaid-1537860518154 .activeCrit0,
+#mermaid-1537860518154 .activeCrit1,
+#mermaid-1537860518154 .activeCrit2,
+#mermaid-1537860518154 .activeCrit3 {
   stroke: #ff8888;
   fill: #bfc7ff;
   stroke-width: 2; }
 
-#mermaid-1537823327869 .doneCrit0,
-#mermaid-1537823327869 .doneCrit1,
-#mermaid-1537823327869 .doneCrit2,
-#mermaid-1537823327869 .doneCrit3 {
+#mermaid-1537860518154 .doneCrit0,
+#mermaid-1537860518154 .doneCrit1,
+#mermaid-1537860518154 .doneCrit2,
+#mermaid-1537860518154 .doneCrit3 {
   stroke: #ff8888;
   fill: lightgrey;
   stroke-width: 2;
   cursor: pointer;
   shape-rendering: crispEdges; }
 
-#mermaid-1537823327869 .doneCritText0,
-#mermaid-1537823327869 .doneCritText1,
-#mermaid-1537823327869 .doneCritText2,
-#mermaid-1537823327869 .doneCritText3 {
+#mermaid-1537860518154 .doneCritText0,
+#mermaid-1537860518154 .doneCritText1,
+#mermaid-1537860518154 .doneCritText2,
+#mermaid-1537860518154 .doneCritText3 {
   fill: black !important; }
 
-#mermaid-1537823327869 .activeCritText0,
-#mermaid-1537823327869 .activeCritText1,
-#mermaid-1537823327869 .activeCritText2,
-#mermaid-1537823327869 .activeCritText3 {
+#mermaid-1537860518154 .activeCritText0,
+#mermaid-1537860518154 .activeCritText1,
+#mermaid-1537860518154 .activeCritText2,
+#mermaid-1537860518154 .activeCritText3 {
   fill: black !important; }
 
-#mermaid-1537823327869 .titleText {
+#mermaid-1537860518154 .titleText {
   text-anchor: middle;
   font-size: 18px;
   fill: black; }
 
-#mermaid-1537823327869 g.classGroup text {
+#mermaid-1537860518154 g.classGroup text {
   fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px; }
 
-#mermaid-1537823327869 g.classGroup rect {
+#mermaid-1537860518154 g.classGroup rect {
   fill: #ECECFF;
   stroke: #9370DB; }
 
-#mermaid-1537823327869 g.classGroup line {
+#mermaid-1537860518154 g.classGroup line {
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 .classLabel .box {
+#mermaid-1537860518154 .classLabel .box {
   stroke: none;
   stroke-width: 0;
   fill: #ECECFF;
   opacity: 0.5; }
 
-#mermaid-1537823327869 .classLabel .label {
+#mermaid-1537860518154 .classLabel .label {
   fill: #9370DB;
   font-size: 10px; }
 
-#mermaid-1537823327869 .relation {
+#mermaid-1537860518154 .relation {
   stroke: #9370DB;
   stroke-width: 1;
   fill: none; }
 
-#mermaid-1537823327869 #compositionStart {
+#mermaid-1537860518154 #compositionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #compositionEnd {
+#mermaid-1537860518154 #compositionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #aggregationStart {
+#mermaid-1537860518154 #aggregationStart {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #aggregationEnd {
+#mermaid-1537860518154 #aggregationEnd {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #dependencyStart {
+#mermaid-1537860518154 #dependencyStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #dependencyEnd {
+#mermaid-1537860518154 #dependencyEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #extensionStart {
+#mermaid-1537860518154 #extensionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 #extensionEnd {
+#mermaid-1537860518154 #extensionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1537823327869 .commit-id,
-#mermaid-1537823327869 .commit-msg,
-#mermaid-1537823327869 .branch-label {
+#mermaid-1537860518154 .commit-id,
+#mermaid-1537860518154 .commit-msg,
+#mermaid-1537860518154 .branch-label {
   fill: lightgrey;
   color: lightgrey; }
-</style><style>#mermaid-1537823327869 {
+</style><style>#mermaid-1537860518154 {
     color: rgba(0, 0, 0, 0.65);
     font: normal normal 400 normal 14px / 21px "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }</style><g></g><g><line id="actor956" x1="75" y1="5" x2="75" y2="325" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Third Party Provider</tspan></text></g><g><line id="actor957" x1="275" y1="5" x2="275" y2="325" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bank API</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">pre-auth OAuth2.0</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">get list of accounts - POST /consent allAccounts</text><line x1="75" y1="135" x2="275" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">set detailed consent - POST /consent</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="198" class="messageText" style="text-anchor: middle;">show balance/transactions - GET /accounts/${iban}/transactions</text><line x1="75" y1="205" x2="275" y2="205" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="233" class="messageText" style="text-anchor: middle;">make payments - /POST/payment/</text><line x1="75" y1="240" x2="275" y2="240" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="260" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="292.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Third Party Provider</tspan></text></g><g><rect x="200" y="260" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="292.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bank API</tspan></text></g></svg>
+  }</style><g></g><g><line id="actor70" x1="75" y1="5" x2="75" y2="360" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Third Party Provider</tspan></text></g><g><line id="actor71" x1="275" y1="5" x2="275" y2="360" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bank API</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">pre-auth OAuth2.0</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">get list of accounts - POST /consent allAccounts</text><line x1="75" y1="135" x2="275" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">set detailed consent - POST /consent</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="223" class="messageText" style="text-anchor: middle;">show balance/transactions  GET /accounts/${id}/transactions</text><line x1="75" y1="230" x2="275" y2="230" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="258" class="messageText" style="text-anchor: middle;">make payments - /POST/payment/</text><line x1="75" y1="265" x2="275" y2="265" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="65" y1="180" x2="285" y2="180" class="loopLine"></line><line x1="285" y1="180" x2="285" y2="275" class="loopLine"></line><line x1="65" y1="275" x2="285" y2="275" class="loopLine"></line><line x1="65" y1="180" x2="65" y2="275" class="loopLine"></line><polygon points="65,180 115,180 115,193 106.6,200 65,200" class="labelBox"></polygon><text x="72.5" y="195" fill="black" class="labelText"><tspan x="72.5" fill="black">loop</tspan></text><text x="175" y="195" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175" fill="black">[ with OAuth2 token ]</tspan></text></g><g><rect x="0" y="295" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="327.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Third Party Provider</tspan></text></g><g><rect x="200" y="295" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="327.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bank API</tspan></text></g></svg>
