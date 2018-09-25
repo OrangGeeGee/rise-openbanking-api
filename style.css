@@ -1,0 +1,12 @@
+section.slide-content {
+  height: 800px;
+  width: 1000px;
+}
+
+h4 {
+  margin-bottom: 0.6em;
+}
+ul {
+  margin-top: 0.6em;
+  padding-top: 10px;
+}

@@ -49,7 +49,7 @@ style: style.css
 ##### Pre-authenticate step (OAuth2 with grant code flow)
 ##### API based on Berlin Group Specification
 * /consents/
-* /accouts/${id}/balance, /accouts/${id}/transactions
+* /accounts/${id}/balance, /accounts/${id}/transactions
 * /payments/sepa-credit-transfer
 
 --
@@ -122,18 +122,19 @@ style: style.css
   * UK Open Banking standards (UK)
   * STET (FR)
   * PolishAPI (PL)
+  * Slovak Banking API Standard (SK)
+  * ...
 
 --
 
-## Initiate payment in Swedbank Baltics
+### Initiate payment in Swedbank Baltics
 
 Complexity level: 1
 
-`POST https://psd2.api.swedbank.com/sandbox/v1/payments/pain.001-sepa-credit-transfers`
+`POST https://psd2.api.swedbank.com/sandbox/v1/payments/pain.001-sepa-credit-transfers` <sup>
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mit XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) von benutzerservice benutzerservice (SIZ GmbH) bearbeitet -->
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
   <CstmrCdtTrfInitn>
     <GrpHdr>
@@ -168,7 +169,7 @@ Complexity level: 1
 
 --
 
-## Initiate payment in Swedbank Sweden
+### Initiate payment in Swedbank Sweden
 
 Complexity level: 1 + 1 = 2
 
@@ -186,9 +187,9 @@ Complexity level: 1 + 1 = 2
 
 --
 
-## Initiate payment in SEB Baltics
+### Initiate payment in SEB Baltics
 
-Complexity level: 2 x 2 = 4
+Complexity level: 2 * 2 = 4
 
 `POST https://api.ob.baltics.sebgroup.com/v1/payments/sepa-credit-transfers`
 
@@ -209,11 +210,11 @@ And it has 4 possible statuses: ACTC, PDNG, ACSC, RJCT
 
 --
 
-## Initiate payment in SEB Sweden
+### Initiate payment in SEB Sweden
 
-Complexity level: 2 x 2 = 4
+Complexity level: 4 * 2 = 8
 
-`POST https://api.seb.se/open/sb/v1/pis/payments`
+`POST https://api.seb.se/open/sb/v1/pis/payments` <br />
 `PUT https://api.seb.se/open/sb/v1/pis/payments/{paymentId}`
 
 ```
@@ -252,31 +253,88 @@ Complexity level: 2 x 2 = 4
 
 --
 
-## Ideas
+### Status field behavior
 
-Opening statement: 6000+ finansinių institucijų europoje affected
+Complexity level: 8 * 2 = 16
 
-Level 2: UK susitarė atskirai, France irgi, Poland irgi, Berlin-group inception
+* Defined in PSD2: ACCP, ACSC, ACSP, ACTC, ACWC, ACWP, PART, RCVD, PDNG, RJCT
+* Used in Swedbank RJCT, ACSC, ACSP, PART, ACTC
+* Used in SEB Sweden RCVD, ACTC, ACCP, RJCT
+* Used in SEB Baltics ACTC, PDNG, ACSC, RJCT
 
-Level 3: Tas daro XML, anas XML ir panašiau į SOAP, šitas JSON, dar kitas dar kažkaip JSON
+--
 
-level 4: PSD2 evolving standard in English; Berlin-group spec evolving standard also in English; RESTful JSON APIs trying to keep up with all the English - no standards.
+### HTTP Headers
 
-Level 5: JSON APIs examples; v1, √2, v3;
+Complexity level: 16 * 2 = 32
 
-Level 6: ...
+What HTTP headers you can find in the wild:
+* psu-http-method
+* Request-initiator
+* TPP-Request-ID
+* X-IBM-Client-Id, X-IBM-Client-Secret
+* X-Application-Context
+
+--
+
+### HTTP Status codes
+
+Complexity level: 32 * 2 = 64
+
+Invalid from account specified when initiating a payment can give you
+
+* 400 Bad Request
+* 404 Not Found
+
+--
+
+### API Versioning
+
+Complexity level: 64 * 2 = 128
+
+* Some APIs are already v2
+* Some version /payments seperately from /accounts
+
+--
+
+### Different API endpoints
+
+Complexity level: 64 * 2
+
+All of these different endpoints have their differences:
+
+* /accounts, /accounts/${id}, /accounts/${id}/balance, /accounts/${id}/transactions
+* /payments/sepa-credit-transfer
+
+--
+
+### Well how about other banks?
+
+* 2 covered
+* ~10 major in Baltics + Sweden
+* ~30 major+minor in Baltics + Sweden
+
+Complexity level: 64 * 16 = 1024
+
+--
+
+### Plz aggregate all Europe
+
+Complexity level: over 9000
 
 --
 
 # Your turn ʕ·͡ᴥ·ʔ
 
---
+-- final
 
 ### Upcomming
 
-1. 2019 September
-2. Fintech map
+1. FinTechs will be/are all over this
+2. 2019 September
 3. Fun challenges on both sides of the fence
+
+<img src="FinTech_Rise_Vilnius.jpeg" height="500" />
 
 --
 
