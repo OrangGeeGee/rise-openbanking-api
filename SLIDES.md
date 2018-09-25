@@ -1,9 +1,9 @@
 title: Openbanking APIs
 author:
   name: Antanas Sinica, Mindaugas Žilinskas
-  url: https://www.swedbank.com/openbanking/
+  url: https://github.com/OrangGeeGee/rise-openbanking-api
 output: index.html
-controls: true
+controls: false
 style: style.css
 
 --
@@ -192,7 +192,7 @@ style: style.css
 
 ### Initiate payment in Swedbank Sweden
 
-<pre>Complexity level: 2 ^ 1 = 1</pre>
+<pre>Complexity level: 2 ^ 1 = 2</pre>
 
 `POST https://psd2.api.swedbank.com/sandbox/v1/payments/se-domestic-ct`
 
@@ -210,7 +210,7 @@ style: style.css
 
 ### Initiate payment in SEB Baltics
 
-Complexity level: 2 * 2 = 4
+<pre>Complexity level: 2 ^ 2 = 4</pre>
 
 `POST https://api.ob.baltics.sebgroup.com/v1/payments/sepa-credit-transfers`
 
@@ -233,7 +233,7 @@ And it has 4 possible statuses: ACTC, PDNG, ACSC, RJCT
 
 ### Initiate payment in SEB Sweden
 
-Complexity level: 4 * 2 = 8
+<pre>Complexity level: 2 ^ 3 = 8</pre>
 
 `POST https://api.seb.se/open/sb/v1/pis/payments` <br />
 `PUT https://api.seb.se/open/sb/v1/pis/payments/{paymentId}`
@@ -275,7 +275,7 @@ Complexity level: 4 * 2 = 8
 
 ### Different API endpoints
 
-Complexity level: 128 * 2 = 256
+<pre>Complexity level: 2 ^ 4 = 16</pre>
 
 All of these different endpoints have their differences:
 
@@ -286,7 +286,7 @@ All of these different endpoints have their differences:
 
 ### Status field behavior
 
-Complexity level: 8 * 2 = 16
+<pre>Complexity level: 2 ^ 5 = 32</pre>
 
 * Defined in PSD2: ACCP, ACSC, ACSP, ACTC, ACWC, ACWP, PART, RCVD, PDNG, RJCT
 * Used in Swedbank RJCT, ACSC, ACSP, PART, ACTC
@@ -297,7 +297,7 @@ Complexity level: 8 * 2 = 16
 
 ### HTTP Headers
 
-Complexity level: 16 * 2 = 32
+<pre>Complexity level: 2 ^ 6 = 64</pre>
 
 What HTTP headers you can find in the wild:
 * psu-http-method
@@ -310,18 +310,22 @@ What HTTP headers you can find in the wild:
 
 ### Status codes & errors
 
-Complexity level: 32 * 2 = 64
+<pre>Complexity level: 2 ^ 7 = 128</pre>
 
-Invalid from account specified when initiating a payment can give you
+Invalid from account specified when initiating a payment can give you 400, 404.
 
-* 400 Bad Request (err | err2 | err3)
-* 404 Not Found (err | err2)
+Everyone's interpreting errors differently.
+
+* 400 Bad Request (InvalidAmount | InvalidCurrency | InvalidFromAccount | ...)
+* 404 Not Found (InvalidFromAccount | ResourceIdMissing | ConsentRevoked | ...)
+* 401 Unauthorized (OAuthTokenExpired | CertificateInvalid | ConsentRevoked | ...)
+* 403 Forbidden (OAuthTokenExpired | CertificateInvalid | ...)
 
 --
 
 ### API Versioning
 
-Complexity level: 64 * 2 = 128
+<pre>Complexity level: 2 ^ 8 = 256</pre>
 
 * Some APIs are already v2
 * Some version /payments seperately from /accounts
@@ -330,17 +334,17 @@ Complexity level: 64 * 2 = 128
 
 ### Well how about other banks?
 
+<pre>Complexity level: 2 ^ (8 + 4) = 4096</pre>
+
 * 2 covered
 * ~10 major in Baltics
 * ~50 major in Baltics + Nordics
-
-Complexity level: 256 * 8 = 2048
 
 --
 
 ### Plz aggregate all Europe
 
-Complexity level: over 9000
+<pre>Complexity level: definitely over 9000</pre>
 
 --
 
