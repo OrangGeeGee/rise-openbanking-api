@@ -2,7 +2,7 @@ title: Openbanking APIs
 author:
   name: Antanas Sinica, Mindaugas Žilinskas
   url: https://www.swedbank.com/openbanking/
-output: slides.html
+output: index.html
 controls: true
 style: style.css
 
