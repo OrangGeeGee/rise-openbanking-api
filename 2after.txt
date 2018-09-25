@@ -1,0 +1,8 @@
+graph LR
+A[Customer] 
+A --> TPP(Swedbank iBank)
+TPP-->acc11
+TPP-->acc12
+TPP-->acc21
+TPP-->acc22
+TPP-->acc23

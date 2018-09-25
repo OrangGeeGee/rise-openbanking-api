@@ -1,0 +1,18 @@
+graph LR
+A[Customer] -->iB1(Swedbank iBank)
+A --> mB1(Swedbank mobile)
+iB1 --> B1(Swedbank)
+mB1 --> B1
+B1 --> acc11(LT1)
+B1 --> acc12(LT2)
+B1 --> acc13(LT3)
+
+A[Customer] -->iB2(xBank)
+A --> mB2(xMobile)
+iB2 --> B2(xBank)
+mB2 --> B2
+B2 --> acc21(LT21)
+B2 --> acc22(LT22)
+B2 --> acc23(LT23)
+
+
